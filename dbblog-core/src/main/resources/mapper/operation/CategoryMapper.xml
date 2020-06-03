@@ -17,13 +17,12 @@
 
     <select id="queryAll" parameterType="Map" resultType="cn.dblearn.blog.entity.operation.Category">
         select t.*,s.name as parentName from category t left join category s on t.parent_id = s.id
-        <where>
+        where 1=1
             <if test="name != null and name != ''">
-                t.name like concat('%',#{name},'%')
+                AND t.name like concat('%',#{name},'%')
             </if>
             <if test="type !=null and type !=''">
-                t.type = #{type}
+                AND t.type = #{type}
             </if>
-        </where>
     </select>
 </mapper>
