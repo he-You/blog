@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -32,6 +33,9 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
 
     @Autowired
     private TagLinkMapper tagLinkMapper;
+
+    @Resource
+    private TagMapper tagMapper;
 
     /**
      * 分页查询
@@ -85,6 +89,11 @@ public class TagServiceImpl extends ServiceImpl<TagMapper, Tag> implements TagSe
         tagLinkMapper.delete(new QueryWrapper<TagLink>().lambda()
                 .eq(linkId != null, TagLink::getLinkId, linkId)
                 .eq(type != null, TagLink::getType, type));
+    }
+
+    @Override
+    public List<Tag> queryTagList(Integer articleId,Integer type) {
+        return tagMapper.queryTagList(articleId,type);
     }
 
 

@@ -50,5 +50,5 @@ public interface TagService extends IService<Tag> {
      */
     void deleteTagLink(Integer linkId, Integer type);
 
-
+    List<Tag> queryTagList(Integer articleId,Integer type);
 }

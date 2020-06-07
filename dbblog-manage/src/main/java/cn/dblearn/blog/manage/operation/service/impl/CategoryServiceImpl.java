@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,8 @@ import java.util.Map;
 @Slf4j
 public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> implements CategoryService {
 
+    @Resource
+    private CategoryMapper categoryMapper;
     /**
      * 查询所有菜单
      *
@@ -73,5 +76,10 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         }
         return String.join(",",categoryStrList);
 
+    }
+
+    @Override
+    public List<Category> queryCategoryListByIds(List<String> categoryIds) {
+        return categoryMapper.queryCategoryListByIds(categoryIds);
     }
 }

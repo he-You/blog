@@ -37,4 +37,11 @@ public interface CategoryService extends IService<Category> {
      * @return
      */
     String renderCategoryArr(String categoryIds, List<Category> categoryList);
+
+    /**
+     *
+     * @param categoryIds
+     * @return
+     */
+    List<Category> queryCategoryListByIds(List<String> categoryIds);
 }
