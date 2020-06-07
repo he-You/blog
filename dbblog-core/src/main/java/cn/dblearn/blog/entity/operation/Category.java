@@ -16,7 +16,7 @@ import java.io.Serializable;
  * 类别表
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2018-12-17
  */
 @Data

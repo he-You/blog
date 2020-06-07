@@ -6,9 +6,9 @@ import lombok.Getter;
 /**
  * ErrorEnum
  *
- * @author bobbi
+ * @author heyou
  * @date 2018/10/07 14:19
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description error类型枚举类
  */
 @Getter

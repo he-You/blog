@@ -3,9 +3,9 @@ package cn.dblearn.blog.common.constants;
 /**
  * RedisKeyConstants
  *
- * @author bobbi
+ * @author heyou
  * @date 2018/10/20 13:44
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description redis baseKey管理常量
  */
 public class RedisKeyConstants {

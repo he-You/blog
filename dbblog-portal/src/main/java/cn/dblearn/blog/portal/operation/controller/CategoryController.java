@@ -18,9 +18,9 @@ import java.util.Map;
 /**
  * CategoryController
  *
- * @author bobbi
+ * @author heyou
  * @date 2019/02/19 15:28
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description
  */
 @RestController("categoryPortalController")

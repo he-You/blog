@@ -3,9 +3,9 @@ package cn.dblearn.blog.common.constants;
 /**
  * RabbitMqConstants
  *
- * @author bobbi
+ * @author heyou
  * @date 2019/03/16 22:12
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description
  */
 public class RabbitMqConstants {

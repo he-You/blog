@@ -10,9 +10,9 @@ import java.util.Map;
 /**
  * BookNoteAdminService
  *
- * @author bobbi
- * @date 2018/11/21 12:47
- * @email 571002217@qq.com
+ * @author heyou
+ * @date 2020/06/01 12:47
+ * @email heyou_0423@163.com
  * @description
  */
 public interface BookNoteService extends IService<BookNote> {

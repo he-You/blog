@@ -11,7 +11,7 @@ import java.util.Map;
  * 系统参数 服务类
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2018-12-28
  */
 public interface SysParamService extends IService<SysParam> {

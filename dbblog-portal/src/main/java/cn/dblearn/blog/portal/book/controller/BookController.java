@@ -20,7 +20,7 @@ import java.util.Map;
  * 文章 前端控制器
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2018-11-07
  */
 @RestController("bookPortalController")

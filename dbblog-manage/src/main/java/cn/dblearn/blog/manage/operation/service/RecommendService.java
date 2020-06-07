@@ -13,7 +13,7 @@ import java.util.Map;
  * 推荐 服务类
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2019-02-22
  */
 public interface RecommendService extends IService<Recommend> {

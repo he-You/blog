@@ -20,9 +20,9 @@ import java.util.Map;
 /**
  * RedisConfig
  *
- * @author bobbi
+ * @author heyou
  * @date 2018/10/19 21:00
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description redis配置
  */
 @Configuration

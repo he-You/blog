@@ -12,7 +12,7 @@ import java.util.Map;
  * 图书表 服务类
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2019-01-27
  */
 public interface BookService extends IService<Book> {

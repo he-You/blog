@@ -18,7 +18,7 @@ import java.util.Map;
  * 图书表 服务实现类
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2019-01-27
  */
 @Service("bookPortalService")

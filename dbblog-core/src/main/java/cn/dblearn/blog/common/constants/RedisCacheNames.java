@@ -3,9 +3,9 @@ package cn.dblearn.blog.common.constants;
 /**
  * RedisCacheNames
  *
- * @author bobbi
+ * @author heyou
  * @date 2019/07/20 18:09
- * @email 571002217@qq.com
+ * @email heyou_0423@163.com
  * @description
  */
 public class RedisCacheNames {

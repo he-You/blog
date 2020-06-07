@@ -11,7 +11,7 @@ import java.util.Map;
  *  服务类
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2018-12-17
  */
 public interface CategoryService extends IService<Category> {

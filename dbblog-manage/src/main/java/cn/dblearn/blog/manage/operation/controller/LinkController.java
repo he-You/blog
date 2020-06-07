@@ -21,7 +21,7 @@ import java.util.Map;
  * 友链 前端控制器
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2019-02-14
  */
 @RestController

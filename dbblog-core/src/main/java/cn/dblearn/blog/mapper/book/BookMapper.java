@@ -15,7 +15,7 @@ import java.util.Map;
  * 图书表 Mapper 接口
  * </p>
  *
- * @author bobbi
+ * @author heyou
  * @since 2019-01-27
  */
 @Mapper
