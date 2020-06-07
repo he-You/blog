@@ -52,10 +52,10 @@ public class Article implements Serializable {
     private String content;
 
     @ApiModelProperty(value = "阅读量")
-    private Long readNum;
+    private Long readNum = 0L;
 
     @ApiModelProperty(value = "点赞量")
-    private Long likeNum;
+    private Long likeNum = 0L;
 
     @ApiModelProperty(value = "封面")
     private String cover;
@@ -85,5 +85,8 @@ public class Article implements Serializable {
 
     @ApiModelProperty(value = "格式化后的内容")
     private String contentFormat;
+
+    @ApiModelProperty(value = "评论数")
+    private Integer commentNum = 0;
 
 }

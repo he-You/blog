@@ -24,4 +24,11 @@ public interface CategoryMapper extends BaseMapper<Category> {
      * @return
      */
     List<Category> queryAll(Map<String, Object> params);
+
+    /**
+     *
+     * @param categoryIds
+     * @return
+     */
+    List<Category> queryCategoryListByIds(List<String> categoryIds);
 }

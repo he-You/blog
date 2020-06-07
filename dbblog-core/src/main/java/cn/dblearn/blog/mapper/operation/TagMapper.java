@@ -39,4 +39,6 @@ public interface TagMapper extends BaseMapper<Tag> {
      * @return
      */
     List<TagVO> listTagVo();
+
+    List<Tag> queryTagList(@Param("articleId")Integer articleId,@Param("type") Integer type);
 }

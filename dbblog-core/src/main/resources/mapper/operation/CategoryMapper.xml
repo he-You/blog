@@ -25,4 +25,11 @@
                 AND t.type = #{type}
             </if>
     </select>
+
+    <select id="queryCategoryListByIds" resultType="cn.dblearn.blog.entity.operation.Category">
+        select * from category where 1=1 and id in
+        <foreach collection="list" item="IdList" open="(" close=")" separator=",">
+            #{IdList}
+        </foreach>
+    </select>
 </mapper>

@@ -26,4 +26,17 @@
           left join tag_link tl on t.id = tl.tag_id and t.type = tl.type) t
         group by t.name
     </select>
+
+    <select id="queryTagList" resultType="cn.dblearn.blog.entity.operation.Tag">
+        SELECT
+            a.id,
+            a.NAME
+        FROM
+            tag a
+        LEFT JOIN tag_link b ON a.id = b.tag_id
+        WHERE
+            1 = 1
+          AND b.type =#{type}
+          AND b.link_id=#{articleId}
+    </select>
 </mapper>

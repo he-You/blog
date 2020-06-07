@@ -20,6 +20,7 @@
         <result column="category_id" property="categoryId" />
         <result column="publish" property="publish" />
         <result column="top" property="top" />
+        <result column="comment_num" property="commentNum" />
     </resultMap>
 
     <resultMap id="WithTagList" type="cn.dblearn.blog.entity.article.dto.ArticleDTO" extends="BaseResultMap">
