@@ -6,6 +6,7 @@ import cn.dblearn.blog.common.util.Query;
 import cn.dblearn.blog.entity.article.Article;
 import cn.dblearn.blog.entity.article.dto.ArticleDTO;
 import cn.dblearn.blog.entity.article.vo.ArticleVO;
+import cn.dblearn.blog.entity.operation.Tag;
 import cn.dblearn.blog.mapper.article.ArticleMapper;
 import cn.dblearn.blog.manage.article.service.ArticleService;
 import cn.dblearn.blog.entity.operation.Category;
@@ -14,6 +15,9 @@ import cn.dblearn.blog.manage.operation.service.TagService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +27,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * articleAdminServiceImpl
@@ -51,16 +56,19 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     public PageUtils queryPage(Map<String, Object> params) {
         Page<ArticleVO> page = new Query<ArticleVO>(params).getPage();
         List<ArticleVO> articleList = baseMapper.listArticleVo(page, params);
-        // 查询所有分类
-        List<Category> categoryList = categoryService.list(new QueryWrapper<Category>().lambda().eq(Category::getType,ModuleEnum.ARTICLE.getValue()));
-        // 封装ArticleVo
-        Optional.ofNullable(articleList).ifPresent((articleVos ->
-                articleVos.forEach(articleVo -> {
-                // 设置类别
-                articleVo.setCategoryListStr(categoryService.renderCategoryArr(articleVo.getCategoryId(),categoryList));
-                // 设置标签列表
-                articleVo.setTagList(tagService.listByLinkId(articleVo.getId(),ModuleEnum.ARTICLE.getValue()));
-            })));
+        for (ArticleVO articleVO : articleList){
+            StringBuilder stringBuilder = new StringBuilder();
+            List<String> categoryList = Arrays.asList(articleVO.getCategoryId().split(","));
+            List<Category> categories = categoryService.queryCategoryListByIds(categoryList);
+            List<Tag> tags = tagService.queryTagList(articleVO.getId(),0);
+            Map<Integer, Category> categoryMap = categories.stream().collect(Collectors.toMap(Category::getId, c -> c));
+            for(String categoryId : categoryList){
+                Category category = categoryMap.get(Integer.parseInt(categoryId));
+                stringBuilder.append(category.getName()).append("/");
+            }
+            articleVO.setCategoryListStr(stringBuilder.toString());
+            articleVO.setTagList(tags);
+        }
         page.setRecords(articleList);
         return new PageUtils(page);
     }
